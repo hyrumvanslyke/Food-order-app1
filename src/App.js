@@ -4,13 +4,15 @@ import ProductsPage from "./pages/Products";
 import Root from "./pages/Root";
 import ErrorPage from "./pages/ErrorPage";
 import ProductDetail from "./pages/ProductDetail";
+
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
-      { path: "/", element: <HomePage /> },
+      { index: true, element: <HomePage /> },
       { path: "/products", element: <ProductsPage /> },
       {path: "/products/:productId", element: <ProductDetail />}
     ],
